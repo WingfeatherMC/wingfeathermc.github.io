@@ -8,73 +8,89 @@
 <meta name="apple-mobile-web-app-title" content="Wing's site">
 <link rel="manifest" href="https://wingfeathermc.github.io/favicon/site.webmanifest">
     <title>Wingfeather's Links</title>
-<style>
-body {
-  padding: 25px;
-  background-color: white;
-  color: black;
-  font-size: 25px;
+<style>body {
+padding: 25px;
+background-color: white;
+color: black;
+font-size: 25px;
 }
 .dark-mode {
-  background-color: black;
-  color: white;
+background-color: black;
+color: white;
 }
 .center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 50%;
 }
 .centerButton {
-  display: block;
-  margin-left: 40%;
-  margin-right: 40%;
-  width: 20%;
+display: block;
+margin-left: 40%;
+margin-right: 40%;
+width: 20%;
 }
 .darkToggler {
-  background-color: black;
-  border-radius: 20px;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  font-size: 16px;
-  cursor: pointer;
+background-color: black;
+border-radius: 20px;
+border: none;
+color: white;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+cursor: pointer;
 }
-.dark-mode .darkToggler {
-  background-color: white;
-  color: black;
-}
-</style>
+.button-dark {
+background-color: white;
+border-radius: 20px;
+border: none;
+color: black;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+cursor: pointer;
+}</style>
+    <title>Wing's awesome website</title>
+<style type="text/css" id="operaUserStyle"></style></head>
+<body class="">
+
 
 <script>
-// theme loading
-window.addEventListener("DOMContentLoaded", () => {
-  const mainBtn = document.getElementById("darkToggler");
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
-    document.body.classList.add("dark-mode");
-    mainBtn.textContent = "Switch to light mode";
-  }
-// toggle dark mode
-  window.toggleDarkAll = function () {
-    const isDark = document.body.classList.toggle("dark-mode");
+const btn = document.getElementById("darkToggler");
+	const savedTheme = localStorage.getItem("theme");
 
-    localStorage.setItem("theme", isDark ? "dark" : "light");
+if (savedTheme === "dark") {
+  document.body.classList.add("dark-mode");
 
-    mainBtn.textContent = isDark
-      ? "Switch to light mode"
-      : "Switch to dark mode";
-  };
-});
+  const btn = document.getElementById("darkToggler");
+  btn.classList.add("button-dark");
+  btn.textContent = "Switch to light mode"
+}
+function toggleDarkAll() {
+  const isDark = document.body.classList.toggle("dark-mode");
+
+  const btn = document.getElementById("darkToggler");
+  btn.classList.toggle("button-dark", isDark);
+
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+
+  btn.textContent = isDark
+    ? "Switch to light mode"
+    : "Switch to dark mode";
+}
 </script>
-</head>
-<body class="">
+
 <button id="darkToggler" class="darkToggler" onclick="toggleDarkAll()">Switch to dark mode</button>
 <h1 style="text-align: center;">My links/socials!</h1>
 <h4 style="text-align: center;">Youtube:<a href="https://www.youtube.com/@WingfeatherMC"> @WingfeatherMC</a></h4>
 <h4 style="text-align: center;">Github:<a href="https://github.com/WingfeatherMC"> WingfeatherMC</a></h4>
 <h4 style="text-align: center;">osu!:<a href="https://osu.ppy.sh/users/38308649"> Skytoucher57</a></h4>
 <button class="centerButton darkToggler" onclick="window.location.href='https://wingfeathermc.github.io'">Home Page</button>
-</body>
-</html>
+
+
+
+</body></html>
